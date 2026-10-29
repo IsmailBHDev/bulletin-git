@@ -10,7 +10,7 @@ public class Bulletin {
         int note5 = 80;
         int note6 = 85;
         int total2 = note4 + note5 + note6;
-        int moyenne2 = total2 / NB_NOTES + BONUS;
+        int moyenne2 = calculerMoyenne(total2);
         System.out.println("Étudiant : " + etudiant2);
         System.out.println("Notes : " + note4 + ", " + note5 + ", " + note6);
         System.out.println("Total : " + total2);
@@ -19,11 +19,14 @@ public class Bulletin {
     }
     private static void afficherBulletin(String etudiant, int note1, int note2, int note3) {
         int total = note1 + note2 + note3;
-        int moyenne = total / NB_NOTES + BONUS;
+        int moyenne = calculerMoyenne(total);
 
         System.out.println("Étudiant : " + etudiant);
         System.out.println("Notes : " + note1 + ", " + note2 + ", " + note3);
         System.out.println("Total : " + total);
         System.out.println("Moyenne : " + moyenne);
+    }
+    private static int calculerMoyenne(int total) {
+        return total / NB_NOTES + BONUS;
     }
 }
