@@ -16,16 +16,16 @@ public class Bulletin {
         System.out.println("Total : " + total);
         System.out.println("Moyenne : " + moyenne);
         System.out.println("----------");
-        String e2 = "Étudiante assidue";
-        int n4 = 90;
-        int n5 = 80;
-        int n6 = 85;
-        int t = n4 + n5 + n6;
-        int m = t / NB_NOTES + BONUS;
-        System.out.println("Étudiant : " + e2);
-        System.out.println("Notes : " + n4 + ", " + n5 + ", " + n6);
-        System.out.println("Total : " + t);
-        System.out.println("Moyenne : " + m);
+        String etudiant2 = "Étudiante assidue";
+        int note4 = 90;
+        int note5 = 80;
+        int note6 = 85;
+        int total2 = note4 + note5 + note6;
+        int moyenne2 = total2 / NB_NOTES + BONUS;
+        System.out.println("Étudiant : " + etudiant2);
+        System.out.println("Notes : " + note4 + ", " + note5 + ", " + note6);
+        System.out.println("Total : " + total2);
+        System.out.println("Moyenne : " + moyenne2);
 
     }
 }
