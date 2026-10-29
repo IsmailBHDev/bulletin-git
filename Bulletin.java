@@ -24,9 +24,14 @@ public class Bulletin {
         return total / NB_NOTES + BONUS;
     }
     private static String calculerMention(int moyenne) {
-    if (moyenne >= SEUIL_REUSSITE) {
+    int x = moyenne;
+
+    System.out.println("DEBUG : moyenne = " + x);
+
+    if (x >= 60) {
         return "Réussite";
     }
+
     return "Échec";
 }
 }
