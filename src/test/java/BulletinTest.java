@@ -18,7 +18,11 @@ class BulletinTest {
 void mentionSelonLeSeuilDeReussite(int moyenne, String mentionAttendue) {
     assertEquals(mentionAttendue, Bulletin.calculerMention(moyenne));
 }
-
+@Test
+@DisplayName("La moyenne est arrondie à l'entier le plus proche")
+void moyenneArrondieALEntierLePlusProche() {
+    assertEquals(60, Bulletin.calculerMoyenne(164));
+}
     @Test
     void moyenneDiviseLeTotalEtAjouteLeBonus() {
         // Arrange : préparer les données
