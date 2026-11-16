@@ -14,7 +14,10 @@ public class Bulletin {
 
     }
     static String exporterJson(String etudiant, int note1, int note2, int note3) {
-    int total = note1 + note2 + note3;
+
+int total = verifierNote(note1)
+          + verifierNote(note2)
+          + verifierNote(note3);
     int moyenne = calculerMoyenne(total);
 
     ResumeBulletin resume = new ResumeBulletin(
@@ -26,7 +29,10 @@ public class Bulletin {
 }
     
     private static void afficherBulletin(String etudiant, int note1, int note2, int note3) {
-        int total = note1 + note2 + note3;
+
+int total = verifierNote(note1)
+          + verifierNote(note2)
+          + verifierNote(note3);
         int moyenne = calculerMoyenne(total);
 
         System.out.println("Étudiant : " + etudiant);
@@ -39,6 +45,15 @@ public class Bulletin {
     static int calculerMoyenne(int total) {
         return Math.round((float) total / NB_NOTES) + BONUS;
     }
+    
+static int verifierNote(int note) {
+    if (note < 0 || note > 100) {
+        throw new IllegalArgumentException(
+            "La note doit être entre 0 et 100"
+        );
+    }
+    return note;
+}
 
     static String calculerMention(int moyenne) {
     if (moyenne >= SEUIL_REUSSITE) {

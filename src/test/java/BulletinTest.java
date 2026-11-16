@@ -5,8 +5,26 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BulletinTest {
+
+@ParameterizedTest
+@CsvSource({"-1", "101"})
+@DisplayName("Une note invalide doit être refusée")
+void noteInvalideEstRefusee(int note) {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> Bulletin.verifierNote(note)
+    );
+}
+
+@ParameterizedTest
+@CsvSource({"0", "100"})
+@DisplayName("Une note valide doit être acceptée")
+void noteValideEstAcceptee(int note) {
+    assertEquals(note, Bulletin.verifierNote(note));
+}
 
 @ParameterizedTest(name = "moyenne {0} : {1}")
 @CsvSource({
