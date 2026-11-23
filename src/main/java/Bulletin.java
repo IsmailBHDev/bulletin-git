@@ -6,6 +6,7 @@ public class Bulletin {
     static final int BONUS = 5;
     static final int SEUIL_REUSSITE = 60;
     public static void main(String[] args) {
+        System.out.println("Bulletins du cours INF1763");
         afficherBulletin("Étudiant démonstration", 70, 100, 70);
         System.out.println("----------");
         afficherBulletin("Étudiante assidue", 90, 80, 85);
